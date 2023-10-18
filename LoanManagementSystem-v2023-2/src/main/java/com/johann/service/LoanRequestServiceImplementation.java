@@ -41,7 +41,7 @@ public class LoanRequestServiceImplementation implements ILoanRequestService{
 		
 		return loanRequestRepo.save(loanRequest);
 	}
-
+	//Added a comment
 	//Update Loan Request
 	@Override
 	@Transactional
@@ -49,7 +49,8 @@ public class LoanRequestServiceImplementation implements ILoanRequestService{
 		
 		return loanRequestRepo.save(loanRequest);
 	}
-
+	
+	//update a status for loanrequest
 	@Override
 	@Transactional
 	public Integer updateStatusLoanRequest(int statusId, int loanRequestId) {
