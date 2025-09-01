@@ -26,7 +26,7 @@ public class AccountRegisterController {
 	
 	@Autowired
 	private IAccountRegisterService accountRegisterService;
-	private IAccountRegisterRepo accountRegisterRepo;
+
 	//Search all AccountRegister
 	@GetMapping("/accountregisters")
 	public List<AccountRegister> findAllAccountRegisters(){

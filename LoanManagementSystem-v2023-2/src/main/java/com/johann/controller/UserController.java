@@ -21,15 +21,11 @@ import com.johann.service.IUserService;
 @CrossOrigin
 @RestController
 @RequestMapping("/api")
-
 public class UserController {
+	
 	@Autowired
 	private IUserService userService;
 
-//	@GetMapping("/users")
-//    public String welcome() {
-//        return "Welcome to my Spring Boot REST API!";
-//    }
 	@GetMapping("/users")
 	public List<User> findAllUsers(){
 		return userService.findAllUsers();
@@ -37,7 +33,6 @@ public class UserController {
 	
 	@GetMapping("/userlogins/{emailOrPhone}&{password}")
 	public User findUserByEmailPhoneAndPassword(@PathVariable String emailOrPhone,@PathVariable String password) {
-		System.out.println("Inside Controller");
 		return userService.findByEmailPhoneAndPassword(emailOrPhone,password);
 	}
 	
@@ -45,16 +40,13 @@ public class UserController {
 	@PostMapping("/users")
 	public ResponseEntity<User> addUser(@RequestBody User user)
 	{
-		System.out.println("Inserting a Record");
 		return new ResponseEntity<User>(userService.addUser(user),HttpStatus.OK);
 	}
 	
-				
 	//Update User
 	@PutMapping("/users")
 	public User updateUser(@RequestBody User user)
 	{
-		System.out.println("Updating a Record");
 		return userService.updateUser(user);
 	}
 				
@@ -62,9 +54,7 @@ public class UserController {
 	@PutMapping("/users/{userID}")
 	public void deleteUser(@PathVariable int userID)
 	{
-		System.out.println("Disabling the record");
 		userService.deleteUser(userID);
-					
 	}
 //	public ResponseEntity<APIResponse> findUserByNameAndPassword(@PathVariable String userName,
 //			@PathVariable String password) {

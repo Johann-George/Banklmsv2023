@@ -75,7 +75,7 @@ public class LoanRequestDTO
 		public int getLoginID() {
 			return loginID;
 		}
-		public void setLoginID(int loanID) {
+		public void setLoginID(int loginID) {
 			this.loginID = loginID;
 		}
 		

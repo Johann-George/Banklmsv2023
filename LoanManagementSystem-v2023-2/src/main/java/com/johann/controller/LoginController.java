@@ -15,13 +15,9 @@ import com.johann.service.ILoginService;
 @RestController
 @RequestMapping("/api")
 public class LoginController {
+
 	@Autowired
 	private ILoginService loginService;
-
-//	@GetMapping("/users")
-//    public String welcome() {
-//        return "Welcome to my Spring Boot REST API!";
-//    }
 	
 	@GetMapping("/logins/{loginName}&{password}")
 	public ResponseEntity<APIResponse> findUserByNameAndPassword(@PathVariable String loginName,@PathVariable String password) {

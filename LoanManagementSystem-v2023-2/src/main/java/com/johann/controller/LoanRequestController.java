@@ -42,7 +42,6 @@ public class LoanRequestController{
 	@PostMapping("/loanrequests")
 	public ResponseEntity<LoanRequest> addLoanRequest(@RequestBody LoanRequest loanRequest)
 	{
-		System.out.println("Inserting a Record");
 		return new ResponseEntity<LoanRequest>(loanRequestService.addLoanRequest(loanRequest),HttpStatus.OK);
 	}
 	
@@ -50,7 +49,6 @@ public class LoanRequestController{
 	@PutMapping("/loanrequests")
 	public ResponseEntity<LoanRequest> udpateLoanRequest(@RequestBody LoanRequest loanRequest)
 	{
-		System.out.println("Inserting a Record");
 		return new ResponseEntity<LoanRequest>(loanRequestService.updateLoanRequest(loanRequest),HttpStatus.OK);
 	}
 	
@@ -65,6 +63,7 @@ public class LoanRequestController{
 				
 		//return new ResponseEntity<>(loanRequestService.updateStatusLoanRequest(statusId, loanRequestId), HttpStatus.OK);
 	}
+
 	//Disable loan request
 //	@PutMapping("/loanrequests/{loanRequestID}")
 //	public void disableLoanRequest(@PathVariable int loanRequestID) {

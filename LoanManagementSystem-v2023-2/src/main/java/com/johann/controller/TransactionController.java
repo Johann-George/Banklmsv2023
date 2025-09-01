@@ -31,7 +31,6 @@ public class TransactionController {
 		return transactionService.findAllTransactions();
 	}
 	
-	
 	//Find Transactions by transaction ID
 	@GetMapping("/transactions/{transactionId}")
 	public Transaction findByTrasactionId(@PathVariable int transactionId) {
@@ -42,7 +41,6 @@ public class TransactionController {
 	@PostMapping("/transactions")
 	public ResponseEntity<Transaction> addTransaction(@RequestBody Transaction transaction)
 	{
-		System.out.println("Inserting a Record");
 		return new ResponseEntity<Transaction>(transactionService.addTransaction(transaction),HttpStatus.OK);
 	}
 	
@@ -50,7 +48,6 @@ public class TransactionController {
 	@PutMapping("/transactions")
 	public ResponseEntity<Transaction> updateTransaction(@RequestBody Transaction transaction)
 	{
-		System.out.println("Inserting a Record");
 		return new ResponseEntity<Transaction>(transactionService.updateTransaction(transaction),HttpStatus.OK);
 	}
 	
